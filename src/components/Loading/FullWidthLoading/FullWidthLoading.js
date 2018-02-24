@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import Spin from 'antd/lib/spin';
 import Alert from 'antd/lib/alert';
 
-const fullWidthLoading = (props) => {
+const fullWidthLoading = props => {
   return (
     <section className="FullWidthLoading-section">
       <Spin
@@ -11,16 +11,18 @@ const fullWidthLoading = (props) => {
         size={props.size}
         spinning={props.spinning}
         tip={props.tip}
-        wrapperClassName={props.wrapperClassName}>
-        {
-          props.alert ? <Alert message={props.alertMessage}
+        wrapperClassName={props.wrapperClassName}
+      >
+        {props.alert ? (
+          <Alert
+            message={props.alertMessage}
             description={props.alertDescription}
-            type={props.alertType} /> 
-          : null
-        }
+            type={props.alertType}
+          />
+        ) : null}
       </Spin>
     </section>
   );
-}
+};
 
 export default fullWidthLoading;

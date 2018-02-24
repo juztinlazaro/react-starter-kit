@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import Button from "antd/lib/button";
-import FullWidthLoading from "ubidy_ui_kit/lib/FullWidthLoading";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Button from 'antd/lib/button';
+import FullWidthLoading from 'ubidy_ui_kit/lib/FullWidthLoading';
 
-import { getBlogEpic, getBlogCancel } from "Actions/queries/blog/blog.action";
+import { getBlogEpic, getBlogCancel } from 'Actions/queries/blog/blog.action';
 
 class Test extends Component {
   componentWillUnmount() {
@@ -19,9 +19,7 @@ class Test extends Component {
   render() {
     return (
       <section className="Test-section">
-        {this.props.loading && (
-          <FullWidthLoading type="Spin" />
-        )}
+        {this.props.loading && <FullWidthLoading type="Spin" />}
 
         <h3>Yow! im a test component and route</h3>
 
@@ -36,11 +34,11 @@ class Test extends Component {
 const mapStateToProps = state => {
   return {
     posts: state.blogs.blogs,
-    loading: state.blogs.loading
+    loading: state.blogs.loading,
   };
 };
 
 export default connect(mapStateToProps, {
   getBlogEpic,
-  getBlogCancel
+  getBlogCancel,
 })(Test);
